@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ashi's Chocolate Calculator</title>
+  <style>
+    body {
+  font-family: sans-serif;
+  background-color:lightyellow;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+form {
+  margin-top: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input, textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+#result {
+  font-weight: bold;
+  font-size: 20px;
+}
+  </style>
+</head>
+<body>
+  <h1>Ashi's Chocolate Calculator</h1>
+    <label for="money">How much money does Ashi have?</label>
+    <input type="number" name="money" id="money">
+    <label for="cost">How much does one chocolate cost?</label>
+    <input type="number" name="cost" id="cost">
+    <button onclick="calculate()">Calculate</button>
+  <p>The maximum number of chocolates Ashi can eat is <span id="result"></span>.</p>
+  <script>
+function calculate() {
+  const money = document.getElementById("money").value;
+  const cost = document.getElementById("cost").value;
+  const maxChocolates = Math.floor(money / cost) + Math.floor(money / (cost * 3));
+  document.getElementById("result").innerHTML = maxChocolates;
+}
+  </script>
+</body>
+</html>
